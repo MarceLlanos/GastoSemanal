@@ -1,0 +1,17 @@
+@import url('normalize.css');
+@import url('skeleton.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,400');
+
+.alert p{
+  margin-bottom: 0 !important;
+}
+
+body{
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
+}
+
+header{
+  margin: 30px 0;
+}
