@@ -19,7 +19,7 @@ class FormularioGasto extends Component{
       this.props.agregarGasto(gasto);
 
     // Resetear el formulario (opcional)
-    e.currentTarget.reset();
+      e.currentTarget.reset();
 
   }
   render(){
