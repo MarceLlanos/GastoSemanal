@@ -14,11 +14,14 @@ class App extends Component{
 	agregarGasto = gasto => {
 		// Tomar una copia del state actual
 			const gastos = {...this.state.gastos};
-			console.log(gastos);
-			console.log(`Se agrego el gato a: ${gasto}`)
+
 		//Agregar el gasto al objeto del state
+			gastos[`gasto${Date.now()}`] = gasto;
+
+			console.log(gastos);
 
 		//Ponerlo al state
+		this.setState({gastos});
 
 	}
 	render(){
