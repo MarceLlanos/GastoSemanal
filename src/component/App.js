@@ -60,7 +60,8 @@ class App extends Component{
 								gastos = {this.state.gastos}
 							/>
 							<ControlPresupuesto
-
+								presupuesto = {this.state.presupuesto}
+								restante = {this.state.restante}
 							/>
 						</div>
 					</div>

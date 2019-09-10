@@ -6,8 +6,12 @@ import Presupuesto from './Presupuesto';
    render(){
 		return(
 			<React.Fragment>
-				<Presupuesto/>
-				<Restante/>
+				<Presupuesto
+					presupuesto = {this.props.presupuesto}
+				/>
+				<Restante
+					restante = {this.props.restante}
+				/>
 			</React.Fragment>
 		)
    }

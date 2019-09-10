@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Presupuesto extends Component{
   render(){
     return(
-      <p>Desde Presupuesto</p>
+      <div className ="alert alert-primary">
+				<p>Presupuesto:$ {this.props.presupuesto}</p>
+			</div>
     )
   }
 }
