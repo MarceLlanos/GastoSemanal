@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import Formulario from './Formulario';
 import Listado from './Listado';
+import {validarPresupuesto} from '../helpers';
 import '../css/App.css';
 
 class App extends Component{
@@ -23,6 +24,24 @@ class App extends Component{
 		this.setState({gastos});
 
 	}
+	// Agregar el component did mount para que se pida el presupuesto
+	componentDidMount(){
+		this.obtenerPresupuesto();
+		
+	}
+	obtenerPresupuesto =() =>{
+		let presupuesto = prompt('Cual es el presupuesto?');
+		let resultado = validarPresupuesto(presupuesto);
+		if(resultado){
+			this.setState({
+				presupuesto:presupuesto,
+				restante: presupuesto
+			});
+		}else{
+			this.obtenerPresupuesto()
+		}
+	}
+
 	render(){
 		return (
 			<div className = "App container">
