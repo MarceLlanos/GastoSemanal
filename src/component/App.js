@@ -4,7 +4,6 @@ import Formulario from './Formulario';
 import Listado from './Listado';
 import {validarPresupuesto} from '../helpers';
 import ControlPresupuesto from './ControlPresupuesto';
-import Restante from './Restante';
 import '../css/App.css';
 
 class App extends Component{
@@ -25,6 +24,9 @@ class App extends Component{
 		//Ponerlo al state
 		this.setState({gastos});
 
+		// restar al presupuesto
+		this.restarPresupuesto(gasto.cantidad);
+
 	}
 	// Agregar el component did mount para que se pida el presupuesto
 	componentDidMount(){
@@ -42,6 +44,23 @@ class App extends Component{
 		}else{
 			this.obtenerPresupuesto()
 		}
+	}
+	// Restar del presupuesto cuando un gasto se crea
+	restarPresupuesto = cantidad =>{
+
+		//leer el gasto
+		let restar = Number(cantidad);
+
+		// Tomar una copia del state actual
+		let restante = this.state.restante;
+
+		//lo restamos
+		restante -= restar
+		console.log(restante);
+
+		//agregamos el nuevo state
+		this.setState({restante});
+
 	}
 
 	render(){
